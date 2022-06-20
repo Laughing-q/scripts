@@ -1,0 +1,14 @@
+#!/bin/bash
+
+pacman -S go
+go env -w GO111MODULE=on
+go env -w GOPROXY=https://goproxy.cn
+export GO111MODULE=on
+export GOPROXY=https://goproxy.cn
+
+git clone https://aur.archlinux.org/yay.git
+pushd yay
+makepkg -si
+popd
+
+yay -S zathura zathura-pdf-mupdf unclutter sxiv mpv maim xwallpaper youtube-dl xsel mpd mpc ncmpcpp picom pamixer dunst light-git task-spooler lf nodejs npm lazygit htop fzf fd libnotify xclip libgtk2.0-dev pulseaudio highlight perl-image-exiftool ctags xdotool bmon feh kchmviewer imagemagick
